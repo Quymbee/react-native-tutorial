@@ -13,9 +13,13 @@ export default function App() {
     ]);
   }
 
+  function deleteGoalHandler(id: string) {
+    setGoals((prev) => prev.filter((goal) => goal.id !== id));
+  }
+
   return (
     <View style={styles.appContainer}>
-      <GoalInput addGoalHandler={addGoalHandler} />
+      <GoalInput onAddGoal={addGoalHandler} />
       <View style={styles.goalsContainer}>
         <Text>List of Goals</Text>
         {/* Using FlatList for better performance with large lists over <ScrollView> */}
@@ -24,7 +28,7 @@ export default function App() {
           alwaysBounceVertical={true}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => {
-            return <GoalItem item={item} />;
+            return <GoalItem item={item} onDelete={deleteGoalHandler} />;
           }}
         />
       </View>
