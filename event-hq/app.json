@@ -5,6 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
+    "backgroundColor": "#e4d0ff",
     "scheme": "eventhq",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
